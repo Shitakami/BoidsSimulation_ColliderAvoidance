@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8133fca33a90b77488039c162701dedd, type: 3}
+  m_Name: AllSearchBoidsSetting
+  m_EditorClassIdentifier: 
+  _cohesionWeight: 0.7
+  _cohesionAffectedRadius: 0.125
+  _cohesionViewAngle: 360
+  _separationWeight: 1.2
+  _separationAffectedRadius: 0.0625
+  _separationViewAngle: 360
+  _alignmentWeight: 0.7
+  _alignmentAffectedRadius: 0.1
+  _alignmentViewAngle: 360
+  _avoidSimulationAreaWeight: 3
+  _instanceScale:
+    x: 0.02
+    y: 0.02
+    z: 0.05
+  _maxSpeed: 0.8
+  _maxSteerForce: 0.4
+  _initializedSpeed: 0.1
