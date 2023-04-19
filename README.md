@@ -3,7 +3,7 @@
 シーン上に配置されたColliderを避けるBoidsシミュレーション
 
 動画の動作環境
-* PC
+* PCスペック
   * CPU : Core i7-9750H
   * GPU : RTX 2070 laptop
   * メモリ : 16GB
