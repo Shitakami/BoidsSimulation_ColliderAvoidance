@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38aaaf214d979af4ba776bc898251d98, type: 3}
   m_Name: NeighborSearchBoidsSetting
   m_EditorClassIdentifier: 
-  _cohesionWeight: 0.7
-  _cohesionAffectedRadius: 0.125
-  _cohesionViewAngle: 360
-  _separationWeight: 1.2
-  _separationAffectedRadius: 0.0625
+  _cohesionWeight: 1.5
+  _cohesionAffectedRadius: 0.35
+  _cohesionViewAngle: 150
+  _separationWeight: 3
+  _separationAffectedRadius: 0.08
   _separationViewAngle: 360
-  _alignmentWeight: 0.7
-  _alignmentAffectedRadius: 0.1
-  _alignmentViewAngle: 360
-  _avoidSimulationAreaWeight: 3
+  _alignmentWeight: 1
+  _alignmentAffectedRadius: 0.2
+  _alignmentViewAngle: 250
+  _avoidSimulationAreaWeight: 0.8
   _instanceScale:
     x: 0.02
     y: 0.02
