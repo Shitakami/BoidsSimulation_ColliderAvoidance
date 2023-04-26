@@ -62,7 +62,7 @@ namespace Boids
                 _boidsDataSteer
             );
 
-            var boidsJobHandle = boidsJob.Schedule(_instanceCount, 0);
+            var boidsJobHandle = boidsJob.Schedule(_instanceCount, 100);
 
             var applySteerForce = new ApplySteerForceJob
             (
@@ -77,7 +77,7 @@ namespace Boids
                 _allSearchBoidsSetting.InstanceScale
             );
 
-            var applySteerForceHandle = applySteerForce.Schedule(_instanceCount, 0, boidsJobHandle);
+            var applySteerForceHandle = applySteerForce.Schedule(_instanceCount, 100, boidsJobHandle);
             applySteerForceHandle.Complete();
         }
 

@@ -59,7 +59,7 @@ namespace Boids
                 _raycastAvoidanceBoidsSetting.NeighborSearchGridScale
             );
 
-            var registerInstanceToGridHandle = registerInstanceToGridJob.Schedule(_instanceCount, 0);
+            var registerInstanceToGridHandle = registerInstanceToGridJob.Schedule(_instanceCount, 100);
 
             var boidsJob = new CalculateBoidsSteerForceJob
             (
@@ -80,7 +80,7 @@ namespace Boids
                 _boidsSteers
             );
 
-            var boidsJobHandler = boidsJob.Schedule(_instanceCount, 0, registerInstanceToGridHandle);
+            var boidsJobHandler = boidsJob.Schedule(_instanceCount, 100, registerInstanceToGridHandle);
             
             var initializeRaycastCommandJob = new RaycastCommandInitializeJob(
                 _raycastCommands,
@@ -88,8 +88,8 @@ namespace Boids
                 _raycastAvoidanceBoidsSetting.RayDistance
             );
 
-            var initializeRaycastCommandJobHandle = initializeRaycastCommandJob.Schedule(_instanceCount, 0);
-            var raycastHandle = RaycastCommand.ScheduleBatch(_raycastCommands, _raycastHits, 0, initializeRaycastCommandJobHandle);
+            var initializeRaycastCommandJobHandle = initializeRaycastCommandJob.Schedule(_instanceCount, 100);
+            var raycastHandle = RaycastCommand.ScheduleBatch(_raycastCommands, _raycastHits, 100, initializeRaycastCommandJobHandle);
 
             var applySteerForce = new ApplySteerForceWithAvoidanceJob
             (
@@ -108,7 +108,7 @@ namespace Boids
 
             _jobHandle = applySteerForce.Schedule(
                 _instanceCount, 
-                0, 
+                100,
                 JobHandle.CombineDependencies(boidsJobHandler, raycastHandle));
             
             JobHandle.ScheduleBatchedJobs();

@@ -56,7 +56,7 @@ namespace Boids
                 _neighborSearchBoidsSetting.NeighborSearchGridScale
             );
 
-            var registerInstanceToGridHandle = registerInstanceToGridJob.Schedule(_instanceCount, 0);
+            var registerInstanceToGridHandle = registerInstanceToGridJob.Schedule(_instanceCount, 100);
 
             var boidsJob = new CalculateBoidsSteerForceByNeighborSearchJob
             (
@@ -77,7 +77,7 @@ namespace Boids
                 _boidsSteers
             );
 
-            var boidsJobHandle = boidsJob.Schedule(_instanceCount, 0, registerInstanceToGridHandle);
+            var boidsJobHandle = boidsJob.Schedule(_instanceCount, 100, registerInstanceToGridHandle);
 
             var applySteerForce = new ApplySteerForceJob
             (
@@ -92,7 +92,7 @@ namespace Boids
                 _neighborSearchBoidsSetting.InstanceScale
             );
 
-            _jobHandle = applySteerForce.Schedule(_instanceCount, 0, boidsJobHandle);
+            _jobHandle = applySteerForce.Schedule(_instanceCount, 100, boidsJobHandle);
             
             JobHandle.ScheduleBatchedJobs();
         }
