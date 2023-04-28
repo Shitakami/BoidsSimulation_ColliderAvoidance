@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875193e29d9e0274eb9a88762379120c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastAvoidanceBoidsSetting: {fileID: 11400000, guid: dc513ba11d3580d478c9bcd54360ba4c, type: 2}
+  _raycastAvoidanceBoidsSetting: {fileID: 11400000, guid: 17ddab58d8bed204087b4e981a6f79c6, type: 2}
   _instanceCount: 10000
   _mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   _material: {fileID: 2100000, guid: 3ea5a0cee1ce1e7469776319cd44ffee, type: 2}
